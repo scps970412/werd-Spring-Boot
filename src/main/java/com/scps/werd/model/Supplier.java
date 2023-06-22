@@ -2,7 +2,7 @@ package com.scps.werd.model;
 
 import java.security.Timestamp;
 
-public class supplier {
+public class Supplier {
     private Timestamp createTime;
     private String creator;
     private Timestamp updateTime;
