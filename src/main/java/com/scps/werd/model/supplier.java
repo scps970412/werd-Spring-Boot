@@ -8,7 +8,7 @@ public class supplier {
     private Timestamp updateTime;
     private String updater;
     private String remark;
-    private boolean isDeleted;
+    private Boolean isDeleted;
     private String id;
     private String supplier;
     private String unifiedBusinessNo;
