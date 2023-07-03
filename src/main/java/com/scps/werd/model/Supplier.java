@@ -1,14 +1,9 @@
 package com.scps.werd.model;
 
-import java.security.Timestamp;
-
 public class Supplier {
-    public Timestamp createTime;
     public String creator;
-    public Timestamp updateTime;
     public String updater;
     public String remark;
-    public Boolean isDeleted;
     public String id;
     public String supplier;
     public String unifiedBusinessNo;
