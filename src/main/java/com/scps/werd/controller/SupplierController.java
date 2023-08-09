@@ -17,19 +17,32 @@ import com.scps.werd.service.SupplierService;
 public class SupplierController {
     @Autowired
     private SupplierService supplierService;
-    
+
     @PostMapping("/add")
     @ResponseBody
-    public String add(@RequestBody Supplier supplier) {        
+    public String add(@RequestBody Supplier supplier) throws SQLException {
         String id = supplierService.add(supplier);
         return id;
     }
-    
-    @PostMapping("/tryAddPs")
+
+    @PostMapping("/updata")
     @ResponseBody
-    public String tryAddPs(@RequestBody Supplier supplier) throws SQLException
-    {
-        String id =  supplierService.tryAddPs(supplier);
-        return id;
+    public boolean updata(@RequestBody Supplier supplier) throws SQLException {
+        boolean isUpdata = supplierService.updata(supplier);
+        return isUpdata;
+    }
+
+    @PostMapping("/delete")
+    @ResponseBody
+    public boolean delete(@RequestBody Supplier supplier) throws SQLException {
+        boolean isDelete = supplierService.delete(supplier);
+        return isDelete;
+    }
+
+    @PostMapping("/getById")
+    @ResponseBody
+    public Supplier getById(@RequestBody Supplier supplier) throws SQLException {
+        Supplier outSupplier = supplierService.getById(supplier.getId());
+        return outSupplier;
     }
 }
