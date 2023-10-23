@@ -3,7 +3,6 @@ package com.scps.werd.controller;
 import java.sql.SQLException;
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
@@ -36,11 +35,9 @@ public class SupplierController {
 
     @PostMapping("/update")
     @ResponseBody
-    public ResponseEntity<Integer> update(@Valid @RequestBody Supplier supplier) {
-        //        int o_count = supplierService.updata(supplier);
-//        return o_count;
-//        throw new Exception("123");
-        return ResponseEntity.ok(2);
+    public Integer update(@Valid @RequestBody Supplier supplier) throws SQLException {
+        int o_count = supplierService.updata(supplier);
+        return o_count;
     }
 
     @PostMapping("/delete")
@@ -84,16 +81,4 @@ public class SupplierController {
         supplierSearchResult = supplierService.getPagination(searchCondition);
         return supplierSearchResult;
     }
-    
-//    @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    @ExceptionHandler(MethodArgumentNotValidException.class)
-//    public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
-//        Map<String, String> errors = new HashMap<>();
-//        ex.getBindingResult().getAllErrors().forEach((error) -> {
-//            String fieldName = ((FieldError) error).getField();
-//            String errorMessage = error.getDefaultMessage();
-//            errors.put(fieldName, errorMessage);
-//        });
-//        return errors;
-//    }
 }
