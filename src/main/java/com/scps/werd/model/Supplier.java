@@ -54,7 +54,7 @@ public class Supplier {
     private String contactPerson;
     /** 聯絡人電話 1 */
     @Size(max = 20, message = "聯絡人電話1不得超過20字")
-    @NotBlank(message = "聯絡人為必填")
+    @NotBlank(message = "聯絡人電話為必填")
     private String contactPersonPhone1;
     /** 聯絡人電話 2 */
     @Size(max = 20, message = "聯絡人電話2不得超過20字")
